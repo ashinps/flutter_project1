@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project1/Level1/q1.dart';
 import 'package:flutter_project1/Level1/q2.dart';
+import 'package:flutter_project1/ListView.dart';
+import 'package:flutter_project1/Travel/Screens/Splash/splashscreen.dart';
+import 'package:flutter_project1/gridview.dart';
 import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
 import 'package:flutter_project1/Travel/Screens/register/register_page.dart';
+import 'package:flutter_project1/stack.dart';
 import 'package:flutter_project1/tabbar/tabmain.dart';
+import 'package:flutter_project1/toast.dart';
 // import 'package:flutter_project1/provider2/counter_page.dart';
 // import 'package:flutter_project1/provider2/notifier_page.dart';
 // import 'package:provider/provider.dart';
@@ -19,7 +24,7 @@ class MyApp extends StatelessWidget {
     title: 'loginpage',
       theme: ThemeData(
         primarySwatch: Colors.red),
-      home: Loginpage()
+      home:const Splash()
     );
     }
 }

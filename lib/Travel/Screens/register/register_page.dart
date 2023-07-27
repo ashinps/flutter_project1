@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project1/Travel/Screens/Home/Homepage.dart';
+import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
 
 class Regstrpage extends StatefulWidget {
   const Regstrpage({Key? key}) : super(key: key);
@@ -17,6 +19,7 @@ class _RegstrpageState extends State<Regstrpage> {
 
   //boolean
   bool passEnable = false;
+  bool confirmPassEnable = false;
 
   final _formKey = GlobalKey<FormState>();
 
@@ -45,9 +48,15 @@ class _RegstrpageState extends State<Regstrpage> {
                     TextFormField(
                       controller: usernameController,
                       decoration: const InputDecoration(
-                        labelText: "Username",
+                        labelText: "Name",
                         border: OutlineInputBorder(),
                       ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your name';
+                          }
+                          return null;
+                        }
                     ),
 
 
@@ -61,6 +70,12 @@ class _RegstrpageState extends State<Regstrpage> {
                         labelText: "Email",
                         border: OutlineInputBorder(),
                       ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
+                          }
+                          return null;
+                        }
                     ),
 
 
@@ -80,7 +95,14 @@ class _RegstrpageState extends State<Regstrpage> {
                               passEnable = !passEnable;
                             });
                           },
-                          icon: Icon(passEnable ? Icons.visibility:Icons.visibility_off)))),
+                          icon: Icon(passEnable ? Icons.visibility:Icons.visibility_off))),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                          return null;
+                        },
+                    ),
 
 
                     const SizedBox(height: 20),
@@ -88,24 +110,54 @@ class _RegstrpageState extends State<Regstrpage> {
 
                     //Confirm password field
                     TextFormField(
-                      obscureText: !passEnable,
+                      obscureText: !confirmPassEnable,
                       controller: confirmPassController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         labelText: "Confirm Password",
-                        border: OutlineInputBorder(),
+                        border: const OutlineInputBorder(),
+                          suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              confirmPassEnable = !confirmPassEnable;
+                            });
+                          },
+                          icon: Icon(confirmPassEnable ? Icons.visibility:Icons.visibility_off))
                       ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please confirm your password';
+                          }
+                          return null;
+                        },
                     ),
 
                     const SizedBox(height: 20),
 
                     //Register button
-                    ElevatedButton(onPressed:(){}, child: const Text('Register'),),
+                    SizedBox(
+                      height:40, width: 200,
+                      child: ElevatedButton(
+                        onPressed:(){
+                          setState(() {
+                            if(_formKey.currentState!.validate()){
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Homepage(),));
+                            }
+                          });
+                        },
+                        child: const Text('Register',style: TextStyle(
+                          fontSize: 15
+                        ),),
+                      ),
+                    ),
 
                     //Goto Login page
+                    const SizedBox(height: 20),
                     Align(alignment:Alignment.center,child:Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children:[const Text('Already have an account?'),
-                        TextButton(onPressed: (){}, child: (const Text('Login')))])),
+                        TextButton(onPressed: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Loginpage(),));
+                        }, child: (const Text('Login',style: TextStyle(fontSize: 15),)))])),
                   ],
                 ),
               ),

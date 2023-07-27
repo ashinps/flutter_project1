@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project1/Travel/Screens/Home/Homepage.dart';
+import 'package:flutter_project1/Travel/Screens/forgotpassword/forgotpass.dart';
+import 'package:flutter_project1/Travel/Screens/register/register_page.dart';
 
 
 class Loginpage extends StatefulWidget {
@@ -29,8 +32,13 @@ class _LoginpageState extends State<Loginpage> {
                  Column(
                      mainAxisAlignment: MainAxisAlignment.center,
                        children: [
-                         const Image(image: AssetImage("assets/images/img_1.jpg"),
-                           height: 200,width: 200,),
+                         // CircleAvatar(
+                         //   radius: 150,
+                         //   backgroundColor: Colors.white,
+                         //   backgroundImage: AssetImage('assets/images/img_1.jpg'),
+                         // ),
+                         Image.asset("assets/images/img_1.jpg",height: 300,width: 300,),
+
 
                          Form(
                            key: _formKey,
@@ -48,7 +56,7 @@ class _LoginpageState extends State<Loginpage> {
                                ),
                                validator: (value) {
                                  if (value == null || value.isEmpty) {
-                                   return 'Please Enter Email';
+                                   return 'Please enter your email';
                                  }
                                  return null;
                                }
@@ -61,7 +69,7 @@ class _LoginpageState extends State<Loginpage> {
                                    obscureText: !passEnable,
                                    validator: (value) {
                                      if (value == null || value.isEmpty) {
-                                       return 'Please Enter Password';
+                                       return 'Please enter your password';
                                      }
                                      return null;
                                    },
@@ -84,14 +92,14 @@ class _LoginpageState extends State<Loginpage> {
 
                  Padding(
                    padding: const EdgeInsets.all(10.0),
-                   child: Align(
-                     alignment: Alignment.centerRight,
                      child: Row(
-                         mainAxisAlignment: MainAxisAlignment.center,
+                         mainAxisAlignment: MainAxisAlignment.end,
                          children:[
-                         TextButton(onPressed: (){},child: const Text("Forgot password?")),
-                         TextButton(onPressed: (){},child: const Text("Register"),)],)
-                   ),
+                         TextButton(onPressed: (){
+                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Forgotpw(),));
+                         },child: const Text("Forgot password?")),
+                         ],)
+
                  ),
 
                  SizedBox(
@@ -100,17 +108,19 @@ class _LoginpageState extends State<Loginpage> {
                      onPressed: (){
                      setState(() {
                        if(_formKey.currentState!.validate()){
-                         ScaffoldMessenger.of(context).showSnackBar(
-                           const SnackBar(content: Text('Processing Data')),
-                         );
+                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Homepage(),));
                        }
-                       print(emailController.text+passController.text);
-                       email=emailController.text;
-                       password=passController.text;
                      });
-                 },child: const Text("Login"),
+                 },child: const Text("Login",
+                   style:TextStyle(fontSize: 15)),
                  ),
                  ),
+
+                 const SizedBox(height: 20),
+                 TextButton(onPressed: () {
+                   Navigator.pushReplacement(context, MaterialPageRoute(
+                     builder: (context) => const Regstrpage(),));
+                     },child: const Text("Register"),)
                 ]
        )
               )
