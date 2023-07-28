@@ -32,12 +32,12 @@ class _LoginpageState extends State<Loginpage> {
                  Column(
                      mainAxisAlignment: MainAxisAlignment.center,
                        children: [
-                         // CircleAvatar(
-                         //   radius: 150,
-                         //   backgroundColor: Colors.white,
-                         //   backgroundImage: AssetImage('assets/images/img_1.jpg'),
-                         // ),
-                         Image.asset("assets/images/img_1.jpg",height: 300,width: 300,),
+                         const CircleAvatar(
+                           radius: 150,
+                           backgroundColor: Colors.white,
+                           backgroundImage: AssetImage('assets/images/img_1.jpg'),
+                         ),
+                         // Image.asset("assets/images/img_1.jpg",height: 300,width: 300,),
 
 
                          Form(
