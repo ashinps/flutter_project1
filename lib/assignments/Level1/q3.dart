@@ -22,17 +22,17 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(23.0),
+              padding: const EdgeInsets.all(23.0),
               child: TextFormField(
                 controller: num1,
-                decoration: InputDecoration(labelText: 'Number 1'),
+                decoration: const InputDecoration(labelText: 'Number 1'),
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(23.0),
+              padding: const EdgeInsets.all(23.0),
               child: TextFormField(
                 controller: num2,
-                decoration: InputDecoration(labelText: 'Number 2'),
+                decoration: const InputDecoration(labelText: 'Number 2'),
               ),
             ),
             Row(
@@ -77,7 +77,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                 }, child: const Text('/'))
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Text('Result: $result', style: const TextStyle(fontSize: 20),)
           ],
         ),

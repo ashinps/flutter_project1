@@ -51,11 +51,12 @@ class _LoginpageState extends State<Loginpage> {
                                TextFormField(
                                controller: emailController,
                                decoration: const InputDecoration(
+                                 hintText: 'example@gmail.com',
                                  border: OutlineInputBorder(),
                                  labelText: "Email"
                                ),
                                validator: (value) {
-                                 if (value == null || value.isEmpty) {
+                                 if (value == null || value.isEmpty|| !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)){
                                    return 'Please enter your email';
                                  }
                                  return null;
@@ -68,13 +69,14 @@ class _LoginpageState extends State<Loginpage> {
                                  TextFormField(
                                    obscureText: !passEnable,
                                    validator: (value) {
-                                     if (value == null || value.isEmpty) {
+                                     if (value == null || value.isEmpty||!RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$').hasMatch(value)) {
                                        return 'Please enter your password';
                                      }
                                      return null;
                                    },
                                    controller: passController,
                                    decoration: InputDecoration(
+                                       hintText: '(8+chars,1lowercase,1uppercase,1digit,1symbol)',
                                        border: const OutlineInputBorder(),
                                        labelText: "Password",
                                        suffixIcon: IconButton(
