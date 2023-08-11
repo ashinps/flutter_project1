@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project1/Travel/Screens/Home/Homepage.dart';
-import 'package:flutter_project1/Travel/Screens/forgotpassword/forgotpass.dart';
+import 'package:flutter_project1/Travel/Screens/Home/homepage.dart';
+import 'package:flutter_project1/Travel/Screens/forgot_password/forgot-password.dart';
 import 'package:flutter_project1/Travel/Screens/register/register_page.dart';
 
 
@@ -56,7 +56,7 @@ class _LoginpageState extends State<Loginpage> {
                                  labelText: "Email"
                                ),
                                validator: (value) {
-                                 if (value == null || value.isEmpty|| !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)){
+                                 if (value == null || value.isEmpty|| !RegExp(r'^[\w-]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)){
                                    return 'Please enter your email';
                                  }
                                  return null;
@@ -69,7 +69,7 @@ class _LoginpageState extends State<Loginpage> {
                                  TextFormField(
                                    obscureText: !passEnable,
                                    validator: (value) {
-                                     if (value == null || value.isEmpty||!RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$').hasMatch(value)) {
+                                     if (value == null || value.isEmpty||!RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,16}$').hasMatch(value)) {
                                        return 'Please enter your password';
                                      }
                                      return null;
@@ -77,6 +77,7 @@ class _LoginpageState extends State<Loginpage> {
                                    controller: passController,
                                    decoration: InputDecoration(
                                        hintText: '(8+chars,1lowercase,1uppercase,1digit,1symbol)',
+                                       hintStyle: TextStyle(fontSize: 14),
                                        border: const OutlineInputBorder(),
                                        labelText: "Password",
                                        suffixIcon: IconButton(
@@ -119,10 +120,16 @@ class _LoginpageState extends State<Loginpage> {
                  ),
 
                  const SizedBox(height: 20),
-                 TextButton(onPressed: () {
-                   Navigator.pushReplacement(context, MaterialPageRoute(
-                     builder: (context) => const Regstrpage(),));
-                     },child: const Text("Register"),)
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     Text("Don't have an account? Create one"),
+                     TextButton(onPressed: () {
+                       Navigator.pushReplacement(context, MaterialPageRoute(
+                         builder: (context) => const RegisterPage(),));
+                         },child: const Text("Register"),),
+                   ],
+                 )
                 ]
        )
               )
