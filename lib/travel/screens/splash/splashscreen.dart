@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
+import 'package:flutter_project1/examples/bottom-sheet.dart';
 class Splash extends StatefulWidget {
   const Splash({super.key});
 
@@ -14,10 +15,10 @@ class _SplashState extends State<Splash> {
   void initState(){
     super.initState();
     Timer(
-      const Duration(seconds: 2),(){
+      const Duration(seconds: 7),(){
       Navigator.pushReplacement(context,
       MaterialPageRoute(
-      builder: (context) => const Loginpage(),
+      builder: (context) => const Welcomepage(),
       ));
     });
   }

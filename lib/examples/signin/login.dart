@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
   }
   Widget _signInButton() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 140),
+      padding: const EdgeInsets.symmetric(horizontal:40),
       child: OutlinedButton(
           onPressed: (){
             signInWithGoogle().then((result){
@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
         });
       },
           child:const Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(0.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

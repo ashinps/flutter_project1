@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
-import 'package:flutter_project1/Travel/Screens/profile/profile.dart';
+import '/travel/screens/Login/login_page.dart';
+import '/travel/screens/profile/profile.dart';
+import '/travel/screens/login/sign_in.dart';
 class Settings extends StatefulWidget {
   const Settings({super.key});
 
@@ -82,8 +83,12 @@ class _SettingsState extends State<Settings> {
 
           //Log Out Tile
           ListTile(
-            title: const Text('Log Out'),leading: const Icon(Icons.logout) ,
-          ),
+            title: const Text('Log Out'),leading: const Icon(Icons.logout),
+            onTap:() {
+              signOutGoogle();
+              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {
+                return const Welcomepage();}), ModalRoute.withName('/'));
+            }),
         ],
       ),
     );
