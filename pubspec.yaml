@@ -45,6 +45,10 @@ dependencies:
   audioplayers: ^5.0.0
   shared_preferences: ^2.2.0
   flutter_tts: ^3.7.0
+  firebase_core: ^2.15.0
+  firebase_auth: ^4.7.2
+  google_sign_in: ^6.1.4
+  firebase_messaging: ^14.6.5
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +78,7 @@ flutter:
     - assets/audio/Old Retro Nokia Tone.mp3
     - assets/images/img_1.jpg
     - assets/images/logo.jpg
+    - assets/images/google-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
