@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '/travel/screens/Login/login_page.dart';
-import '/travel/screens/profile/profile.dart';
-import '/travel/screens/login/sign_in.dart';
+import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
+import 'package:flutter_project1/travel/screens/profile/profile.dart';
+import 'package:flutter_project1/travel/screens/login/sign_in.dart';
 class Settings extends StatefulWidget {
   const Settings({super.key});
 
