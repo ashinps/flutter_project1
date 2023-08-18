@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
+import 'package:flutter_project1/travel/screens/DeleteAccount/delete%20account.dart';
+import 'package:flutter_project1/travel/screens/change%20password/changepassword.dart';
+import 'package:flutter_project1/travel/screens/privacy%20policy/privacypolicy.dart';
 import 'package:flutter_project1/travel/screens/profile/profile.dart';
 import 'package:flutter_project1/travel/screens/login/sign_in.dart';
 class Settings extends StatefulWidget {
@@ -30,9 +33,10 @@ class _SettingsState extends State<Settings> {
           }),
 
           //Privacy Policy Tile
-          const ListTile(
-            title: Text('Privacy Policy'),leading: Icon(Icons.privacy_tip) ,
-          ),
+           ListTile(
+            title: const Text('Privacy Policy'),leading: const Icon(Icons.privacy_tip) ,
+            onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context)=>  const PrivacyPolicy()),);
+            }),
 
           //Notifications Tile
           ListTile(
@@ -72,13 +76,17 @@ class _SettingsState extends State<Settings> {
           ),
 
           //Change Password Tile
-          const ListTile(
-            title: Text('Change Password'),leading: Icon(Icons.password) ,
+          ListTile(
+            title: const Text('Change Password'),leading: const Icon(Icons.password) ,
+            onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context)=>  const ChangePassword()),);
+              }
           ),
 
           //Delete Account Tile
-           const ListTile(
-            title: Text('Delete Account'), leading: Icon(Icons.delete) ,
+          ListTile(
+            title: const Text('Delete Account'), leading: const Icon(Icons.delete) ,
+              onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context)=>  const DeleteAccount()),);
+              }
           ),
 
           //Log Out Tile
