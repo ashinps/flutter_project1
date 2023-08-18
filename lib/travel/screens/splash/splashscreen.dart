@@ -34,7 +34,7 @@ class _SplashState extends State<Splash> {
             Center(
                 child: CircleAvatar(
                   radius: 150.0,
-                  backgroundColor: Colors.white,
+                  backgroundColor: Colors.transparent,
                   backgroundImage: AssetImage('assets/images/logo.jpg'),
                 ),),
            Padding(

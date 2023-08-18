@@ -16,6 +16,8 @@ import 'package:flutter_project1/examples/tts.dart';
 import 'package:flutter_project1/examples/urlexample.dart';
 import 'package:flutter_project1/examples/urlexample2.dart';
 import 'package:flutter_project1/examples/videoplayer.dart';
+import 'package:flutter_project1/examples/web%20service/album.dart';
+import 'package:flutter_project1/travel/screens/profile/profile.dart';
 
 
 main() => runApp(const MyApp());
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     theme: ThemeData(primarySwatch: Colors.red),
-    home:MapScreen(),
+    home:AlbumClass(),
     );
     }
 }

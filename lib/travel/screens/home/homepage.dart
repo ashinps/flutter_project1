@@ -72,7 +72,35 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Text('Home is here')),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(17),
+                      boxShadow: [BoxShadow(
+                        color: Colors.black.withOpacity(.09),
+                        spreadRadius: 5,
+                        blurRadius: 5,
+                        offset: Offset(0,3),
+                      )]),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(17)
+                        ),
+                        suffixIcon: Icon(Icons.search),
+                        hintText: 'Search Destination',
+
+                    ),
+                  ),
+                ),
+              ),
+
+            ],
+          )),
     );
   }
 }

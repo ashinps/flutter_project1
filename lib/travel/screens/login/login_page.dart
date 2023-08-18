@@ -95,7 +95,7 @@ class _LoginpageState extends State<Loginpage> {
                        children: [
                          const CircleAvatar(
                            radius: 150,
-                           backgroundColor: Colors.white,
+                           backgroundColor: Colors.transparent,
                            backgroundImage: AssetImage('assets/images/img_1.jpg'),
                          ),
                          // Image.asset("assets/images/img_1.jpg",height: 300,width: 300,),
