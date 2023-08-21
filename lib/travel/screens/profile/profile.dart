@@ -1,6 +1,7 @@
 
 import 'package:flutter_project1/travel/screens/login/sign_in.dart';
 import 'package:flutter/material.dart';
+
 class ProfileSettings extends StatefulWidget {
   const ProfileSettings({super.key});
 
@@ -37,7 +38,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
               SizedBox(height: 20,),
 
               CircleAvatar(
-                 backgroundColor: Colors.transparent,
+                 backgroundColor: Colors.white,
                  backgroundImage: NetworkImage(imageUrl!),
                  radius: 60,
              ),

@@ -8,6 +8,7 @@ import 'package:flutter_project1/Travel/Screens/settings/setting.dart';
 import 'package:flutter_project1/examples/bottom-sheet.dart';
 import 'package:flutter_project1/examples/maps/maps.dart';
 import 'package:flutter_project1/examples/phone-daileer.dart';
+import 'package:flutter_project1/examples/realtimedb/db.dart';
 import 'package:flutter_project1/examples/sharedpref2.dart';
 import 'package:flutter_project1/examples/sharedpreferences.dart';
 import 'package:flutter_project1/examples/signin/login.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     theme: ThemeData(primarySwatch: Colors.red),
-    home:Homepage(),
+    home:Splash(),
     );
     }
 }

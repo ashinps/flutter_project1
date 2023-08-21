@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project1/Travel/Screens/settings/setting.dart';
+
+import '../../../examples/signin/sign_in.dart';
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -74,6 +76,11 @@ class Home extends StatelessWidget {
       body: Center(
           child: Column(
             children: [
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                backgroundImage: NetworkImage(imageUrl!),
+                radius: 60,
+              ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project1/Travel/Screens/Home/homepage.dart';
 import 'package:flutter_project1/Travel/Screens/forgot_password/forgot-password.dart';
 import 'package:flutter_project1/Travel/Screens/register/register_page.dart';
+import 'package:flutter_project1/travel/screens/home/new.dart';
 
 import 'sign_in.dart';
 
@@ -40,11 +41,17 @@ class Welcomepage extends StatelessWidget {
                     foregroundColor: MaterialStateProperty.all<Color>(Colors.black)
                 ),
                 onPressed: (){
-                    signInWithGoogle().then((result){
-                      if(result != null){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Homepage()));
-                      }
-                    });
+                  signInWithGoogle().then((result) {
+                    if (result != null) {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return FirstScreen();
+                          },
+                        ),
+                      );
+                    }
+                  });
                 },
 
                 child: const Padding(
