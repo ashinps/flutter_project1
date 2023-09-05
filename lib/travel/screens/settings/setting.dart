@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
 import 'package:flutter_project1/travel/screens/DeleteAccount/delete%20account.dart';
 import 'package:flutter_project1/travel/screens/change%20password/changepassword.dart';
 import 'package:flutter_project1/travel/screens/privacy%20policy/privacypolicy.dart';
 import 'package:flutter_project1/travel/screens/profile/profile.dart';
 import 'package:flutter_project1/travel/screens/login/sign_in.dart';
+import 'package:flutter_project1/travel/screens/welcome_page/welcome_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class Settings extends StatefulWidget {
   const Settings({super.key});
 
@@ -92,10 +93,13 @@ class _SettingsState extends State<Settings> {
           //Log Out Tile
           ListTile(
             title: const Text('Log Out'),leading: const Icon(Icons.logout),
-            onTap:() {
-              signOutGoogle();
+            onTap:() async{
+             await signOutGoogle();
+             SharedPreferences.getInstance().then((pref){
+               pref.setBool('LoggedIn', false);
+             });
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {
-                return const Welcomepage();}), ModalRoute.withName('/'));
+                return const WelcomePage();}), ModalRoute.withName('/'));
             }),
         ],
       ),

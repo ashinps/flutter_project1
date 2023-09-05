@@ -19,14 +19,13 @@ class _tStyleState extends State<tStyle> {
             width: 300,
             height: 300,
             color: Colors.yellowAccent,
-            child:Text("Hello world, spread wisdom and kindness",
+            child:const Text("Hello world, ",
             textAlign: TextAlign.justify,
             textDirection: TextDirection.rtl,
             maxLines: 5,
-            //textScaleFactor: 2,
             style: TextStyle(
               color: Colors.green,
-              fontFamily: "ChelaOne",
+              fontFamily: "Myfont",
               fontSize: 30,
               backgroundColor: Colors.white,
               //decoration: TextDecoration.underline

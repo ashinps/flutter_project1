@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project1/Travel/Screens/settings/setting.dart';
+import 'package:flutter_project1/travel/screens/home/grid.dart';
 
-import '../../../examples/signin/sign_in.dart';
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -23,18 +23,25 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(
         title: const Text('Trip Ease'),),
       drawer: Drawer(
-        child: Column(
-          children: <Widget>[
+        child: Scaffold(
+          appBar: AppBar(
 
+          ),
+          body:Column(
+              children:
+          <Widget>[
             //settings
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("Settings"),
-              onTap:  () async {
-              await Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Settings()),);}
+                leading: Icon(Icons.settings),
+                title: Text("Settings"),
+                onTap:  () async {
+                  Navigator.pop;
+                  await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Settings()),);
+
+                }
             ),
-          ],
+          ]) ,
         ),
       ),
 
@@ -75,12 +82,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                backgroundImage: NetworkImage(imageUrl!),
-                radius: 60,
-              ),
+              //SearchBar
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
@@ -105,6 +109,15 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
+
+              Padding(padding: EdgeInsets.all(0.0),
+                child:Container(
+                  child: Grid(),
+                  height: 440,
+                  color: Colors.black,
+                ),)
+
+
 
             ],
           )),
