@@ -3,12 +3,15 @@ import 'package:flutter_project1/Travel/Screens/Home/homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../login/sign_in.dart';
 import '../Login/login_page.dart';
-import '../profile/profile.dart';
 import '../register/register_page.dart';
 
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  Future<bool> isLoggedIn()async {
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getBool('LoggedIn')?? false;
+  }
+    const WelcomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,16 @@ class WelcomePage extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all(Colors.white),
                     foregroundColor: MaterialStateProperty.all(Colors.black),
                 ),
-              onPressed: ()async{
+              onPressed: ()async {
+                bool loggedIn = await isLoggedIn();
+                if (loggedIn) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) {
+                      return Homepage();
+                    },
+                    ),
+                  );
+                } else {
                   await signInWithGoogle().then((result) {
                     if (result != null) {
                       SharedPreferences.getInstance().then((pref){
@@ -67,8 +79,9 @@ class WelcomePage extends StatelessWidget {
                         ),
                       );
                     }
-                  },);
-                },
+                  });
+                }
+              },
               icon: Image.asset('assets/images/google-logo.png',
                 height: 48,),
               label: Text('Sign in with Google'),
