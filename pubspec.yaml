@@ -58,6 +58,7 @@ dependencies:
   http: ^1.1.0
   animations: ^2.0.8
   flutter_google_places_hoc081098:
+  google_places_flutter: ^2.0.6
 
 
 dev_dependencies:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project1/main.dart';
-import 'package:flutter_project1/travel/screens/DeleteAccount/delete%20account.dart';
-import 'package:flutter_project1/travel/screens/change%20password/changepassword.dart';
+import 'package:flutter_project1/travel/screens/delete_account/delete account.dart';
+import 'package:flutter_project1/travel/screens/change_password/changepassword.dart';
 import 'package:flutter_project1/travel/screens/privacy%20policy/privacypolicy.dart';
 import 'package:flutter_project1/travel/screens/profile/profile.dart';
 import 'package:flutter_project1/travel/screens/login/sign_in.dart';

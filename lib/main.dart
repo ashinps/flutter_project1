@@ -8,6 +8,8 @@ import 'package:flutter_project1/Travel/Screens/settings/setting.dart';
 import 'package:flutter_project1/examples/alarm/alarm.dart';
 import 'package:flutter_project1/examples/animations/tween.dart';
 import 'package:flutter_project1/examples/bottom-sheet.dart';
+import 'package:flutter_project1/examples/darktheme/page1.dart';
+import 'package:flutter_project1/travel/utils/theme.dart';
 import 'package:flutter_project1/examples/firestore_cloud/firedb.dart';
 import 'package:flutter_project1/examples/maps/maps.dart';
 import 'package:flutter_project1/examples/phone-daileer.dart';
@@ -35,7 +37,7 @@ main() async {
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(
-        create: (_)=> ThemeProvider())],
+        create: (_)=> ThemeProvider2())],
       child: MyApp(),)
 
      );
@@ -46,8 +48,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
           return MaterialApp(
-          theme: Provider.of<ThemeProvider>(context).themeData,
-          home:Splash(),
+          theme: Provider.of<ThemeProvider2>(context).themeData,
+          home:Page1(),
         );
     }
 }
