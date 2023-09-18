@@ -8,9 +8,10 @@ import 'package:flutter_project1/Travel/Screens/settings/setting.dart';
 import 'package:flutter_project1/examples/alarm/alarm.dart';
 import 'package:flutter_project1/examples/animations/tween.dart';
 import 'package:flutter_project1/examples/bottom-sheet.dart';
+import 'package:flutter_project1/examples/cacheimages/cacheimage.dart';
 import 'package:flutter_project1/examples/darktheme/page1.dart';
-import 'package:flutter_project1/travel/utils/theme.dart';
 import 'package:flutter_project1/examples/firestore_cloud/firedb.dart';
+import 'package:flutter_project1/examples/map/map.dart';
 import 'package:flutter_project1/examples/maps/maps.dart';
 import 'package:flutter_project1/examples/phone-daileer.dart';
 import 'package:flutter_project1/examples/realtimedb/db.dart';
@@ -37,19 +38,22 @@ main() async {
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(
-        create: (_)=> ThemeProvider2())],
-      child: MyApp(),)
+        create: (_)=> ThemeProvider())],
+      child: const MyApp(),)
 
      );
 }
 
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context){
           return MaterialApp(
-          theme: Provider.of<ThemeProvider2>(context).themeData,
-          home:Page1(),
+          debugShowCheckedModeBanner: false,
+          theme: Provider.of<ThemeProvider>(context).themeData,
+          home:Homepage(),
         );
     }
 }

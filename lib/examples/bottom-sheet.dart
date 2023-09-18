@@ -1,14 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'sql_helper.dart';
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class BottomSheetExample extends StatefulWidget {
+  const BottomSheetExample({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<BottomSheetExample> createState() => _BottomSheetExampleState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _BottomSheetExampleState extends State<BottomSheetExample> {
   // All journals
   List<Map<String, dynamic>> _journals = [];
 

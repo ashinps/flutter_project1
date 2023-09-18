@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_places_hoc081098/google_maps_webservice_places.dart';
-import 'package:flutter_project1/examples/map_search/secrets.dart';
+// import 'package:flutter_project1/examples/map_search/secrets.dart';
 import 'package:flutter_project1/main.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_places_flutter/google_places_flutter.dart';
@@ -27,7 +27,7 @@ class MapSearch extends StatefulWidget {
 
 class _MapSearchState extends State<MapSearch> {
   GoogleMapController? _controller;
-  GoogleMapsPlaces googlePlace = GoogleMapsPlaces(Secrets.googlePlacesApiKey);
+  // GoogleMapsPlaces googlePlace = GoogleMapsPlaces(Secrets.googlePlacesApiKey);
   TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _MapSearchState extends State<MapSearch> {
               zoom: 14.0,
             ),
           ),
-          Positioned(top:10.0,left: 10.0,right: 10.0, child: TextField)
+          // Positioned(top:10.0,left: 10.0,right: 10.0, child: TextField)
         ],
       ),
     );

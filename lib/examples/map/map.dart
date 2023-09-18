@@ -25,49 +25,36 @@ class _MapsState extends State<Maps> {
     setState(() {
       _marker = {};
       _marker.add(Marker(
-        onTap: _bottomSheet,
-        markerId: MarkerId(position.toString()),
-        position: position,
-        draggable: true,
-        infoWindow: const InfoWindow(
-          title:'Marker',
-          snippet: 'Marker',
-        ),
+      markerId: MarkerId(position.toString()),
+      position: position,
+      draggable: true,
+
+      infoWindow: const InfoWindow(
+      title:'Marker',
+      snippet: 'Marker',
+      ),
       ));
     });
   }
-
-  _bottomSheet(){
-    showModalBottomSheet(
-        elevation: 25,
-        context: context,
-        builder:(_)=> Container(height: 200,
-            child: ListTile(
-              leading: Icon(Icons.add),
-              title: Text('Add location'),
-              onTap: (){},
-            ),));
-  }
-  
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Stack(
-        children: [
-          GoogleMap(
-              onTap: _addMarker,
-              onMapCreated: _onMapCreated,
-              mapType: MapType.hybrid,
-              markers: _marker,
-              initialCameraPosition: CameraPosition(
+          children: [
+            GoogleMap(
+                onTap: _addMarker,
+                onMapCreated: _onMapCreated,
+                mapType: MapType.hybrid,
+                markers: _marker,
+                initialCameraPosition: CameraPosition(
                 target: _center,
                 zoom: 0.0,
 
-              )),
+            )),
 
-        ],
-      ),
+          ],
+        ),
 
     );
   }

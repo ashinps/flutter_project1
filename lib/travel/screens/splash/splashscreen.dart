@@ -41,17 +41,26 @@ class _SplashState extends State<Splash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-                child: CircleAvatar(
-                  radius: 150.0,
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: AssetImage('assets/images/logo.jpg'),
+                child: Stack(
+                  children: [
+                    Center(
+                      child: CircleAvatar(
+                        radius: 150.0,
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage('assets/images/logo.jpg'),
+
+                      ),
+                    ),
+                    Center(
+                      child: SizedBox(
+                        height: 300,width: 300,
+                        child: CircularProgressIndicator(
+                          strokeWidth:3,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),),
-           Padding(
-             padding: EdgeInsets.all(60.0),
-             child: CircularProgressIndicator(
-               strokeWidth:3,
-             ),
-           ),
           ],
         ),
       ),
