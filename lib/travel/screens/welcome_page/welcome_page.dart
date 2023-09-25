@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project1/Travel/Screens/Home/homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../login/sign_in.dart';
-import '../Login/login_page.dart';
-import '../register/register_page.dart';
+
+import 'package:flutter_project1/travel/screens/home/homepage.dart';
+import 'package:flutter_project1/travel/screens/login/sign_in.dart';
+import 'package:flutter_project1/travel/screens/login/login_page.dart';
+import 'package:flutter_project1/travel/screens/register/register_page.dart';
+
 
 
 class WelcomePage extends StatelessWidget {
@@ -38,18 +40,18 @@ class WelcomePage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal:70,vertical: 12.0),
               child: Text('Log in'),
             ),),
-            SizedBox(height: 12,),
+            const SizedBox(height: 12,),
 
             //Sign up Button
             ElevatedButton(
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) => const RegisterPage(),));
-                }, child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 67,vertical: 12),
-              child: const Text('Sign up'),
+                }, child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 67,vertical: 12),
+              child: Text('Sign up'),
             )),
-            SizedBox(height: 12,),
+            const SizedBox(height: 12,),
 
             ElevatedButton.icon(
               style: ButtonStyle(
@@ -61,7 +63,7 @@ class WelcomePage extends StatelessWidget {
                 if (loggedIn) {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) {
-                      return Homepage();
+                      return const Homepage();
                     },
                     ),
                   );
@@ -74,7 +76,7 @@ class WelcomePage extends StatelessWidget {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) {
-                            return Homepage();
+                            return const Homepage();
                           },
                         ),
                       );
@@ -84,7 +86,7 @@ class WelcomePage extends StatelessWidget {
               },
               icon: Image.asset('assets/images/google-logo.png',
                 height: 48,),
-              label: Text('Sign in with Google'),
+              label: const Text('Sign in with Google'),
             )
           ],
         ),

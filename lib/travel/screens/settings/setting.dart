@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project1/travel/screens/delete_account/delete account.dart';
-import 'package:flutter_project1/travel/screens/change_password/changepassword.dart';
-import 'package:flutter_project1/travel/screens/privacy%20policy/privacypolicy.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:flutter_project1/travel/screens/delete_account/delete_account.dart';
+import 'package:flutter_project1/travel/screens/change_password/change_password.dart';
+import 'package:flutter_project1/travel/screens/privacy%20policy/privacy_policy.dart';
 import 'package:flutter_project1/travel/screens/profile/profile.dart';
 import 'package:flutter_project1/travel/screens/login/sign_in.dart';
 import 'package:flutter_project1/travel/screens/welcome_page/welcome_page.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:flutter_project1/travel/utils/theme_provider.dart';
 
 

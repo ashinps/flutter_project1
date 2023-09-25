@@ -7,7 +7,7 @@ class PrivacyPolicy extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Privacy policy'),
+        title: const Text('Privacy policy'),
       ),
       body: const SingleChildScrollView(
         padding: EdgeInsets.all(16.0),

@@ -26,7 +26,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
               )],
               color:Colors.white,
 
@@ -40,10 +40,10 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                  backgroundImage: NetworkImage(imageUrl!), radius: 60,
                  backgroundColor: Colors.transparent,
              ),
-              SizedBox(height:40 ,),
+              const SizedBox(height:40 ,),
 
                Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children:[
                   const Text('Name:',),
@@ -53,7 +53,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
               ),
 
                Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Row(children:
                 [const Text('Email:',),
                  const SizedBox(width: 20,),

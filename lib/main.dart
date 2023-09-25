@@ -34,7 +34,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_project1/travel/utils/theme_provider.dart';
 import 'package:provider/provider.dart';
 
-main() async {
+main() async {;
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: Provider.of<ThemeProvider>(context).themeData,
-          home:Homepage(),
+          home:WelcomePage(),
         );
     }
 }

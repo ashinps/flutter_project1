@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project1/Travel/Screens/Home/homepage.dart';
-import 'package:flutter_project1/Travel/Screens/Login/login_page.dart';
+import 'package:flutter_project1/travel/screens/home/homepage.dart';
+import 'package:flutter_project1/travel/screens/login/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -92,7 +92,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           decoration: InputDecoration(
                             hintText: '(8+chars,1lowercase,1uppercase,1digit,1symbol)',
                             labelText: "Password",
-                            hintStyle: TextStyle(fontSize: 14),
+                            hintStyle: const TextStyle(fontSize: 14),
                             border: const OutlineInputBorder(),
                             suffixIcon: IconButton(
                               onPressed: () {

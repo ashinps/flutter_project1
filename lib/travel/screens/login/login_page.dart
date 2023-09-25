@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project1/Travel/Screens/Home/homepage.dart';
-import 'package:flutter_project1/Travel/Screens/forgot_password/forgot-password.dart';
+import 'package:flutter_project1/Travel/Screens/forgot_password/forgot_password.dart';
 import 'package:flutter_project1/Travel/Screens/register/register_page.dart';
 import 'package:flutter_project1/travel/screens/profile/profile.dart';
 import 'sign_in.dart';
