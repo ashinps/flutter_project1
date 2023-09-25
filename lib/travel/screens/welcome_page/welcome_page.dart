@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:flutter_project1/travel/screens/home/homepage.dart';
-import 'package:flutter_project1/travel/screens/login/sign_in.dart';
 import 'package:flutter_project1/travel/screens/login/login_page.dart';
 import 'package:flutter_project1/travel/screens/register/register_page.dart';
 
-
+import 'package:flutter_project1/travel/utils/sign_in.dart';
 
 class WelcomePage extends StatelessWidget {
   Future<bool> isLoggedIn()async {
@@ -35,7 +34,7 @@ class WelcomePage extends StatelessWidget {
             //Login Button
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Loginpage(),));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginPage(),));
               }, child: const Padding(
               padding: EdgeInsets.symmetric(horizontal:70,vertical: 12.0),
               child: Text('Log in'),

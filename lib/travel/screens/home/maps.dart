@@ -51,7 +51,7 @@ class _MapsState extends State<Maps> {
   }
 
   _addLocation(){
-  SizedBox(height: 200,child: Text("hllo"),);
+  const SizedBox(height: 200,child: Text("hello"),);
   }
 
   @override

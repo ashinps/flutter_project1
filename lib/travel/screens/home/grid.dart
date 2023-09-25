@@ -24,7 +24,7 @@ List<String>images=[];
 bool isLoading= true;
 
 Future<void>display()async{
-  var url = "https://flutterproject1-76fff-default-rtdb.firebaseio.com/""Destinations.json";
+  var url = "https://flutterproject1-76fff-default-rtdb.firebaseio.com/Destinations.json";
   try{
     final response=await http.get(Uri.parse(url));
     final data=json.decode(response.body) as Map<String, dynamic>;

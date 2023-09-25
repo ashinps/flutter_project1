@@ -1,5 +1,5 @@
 
-import 'package:flutter_project1/travel/screens/login/sign_in.dart';
+import 'package:flutter_project1/travel/utils/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class ProfileSettings extends StatefulWidget {
